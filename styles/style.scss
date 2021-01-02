@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  border: 2px solid brown;
+  width: 450px;
+  margin: 5% auto 0;
+  padding: 10px 20px;
+  box-sizing: border-box;
+
+  button {
+    cursor: pointer;
+    padding: 4px;
+    font-weight: bold;
+  }
+
+  .top {
+    margin-top: 10px;
+
+    label {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    input {
+      padding: 3px;
+      font-size: 1em;
+    }
+
+    p {
+      text-align: center;
+      display: none;
+      color: red;
+      font-size: 1.2em;
+    }
+  }
+
+  ul {
+    margin: 10px 0 0 20px;
+
+    li {
+      font-size: 1.5em;
+      
+      button {
+      margin: 0 0 10px 50px;
+      cursor: pointer;
+      }
+    }
+  }
+}
