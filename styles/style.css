@@ -18,9 +18,14 @@ body {
 }
 
 .wrapper button {
+  border: 2px solid grey;
   cursor: pointer;
   padding: 4px;
   font-weight: bold;
+}
+
+.wrapper button:active {
+  border: 2px solid #04e904;
 }
 
 .wrapper .top {
@@ -35,6 +40,10 @@ body {
 .wrapper .top input {
   padding: 3px;
   font-size: 1em;
+}
+
+.wrapper .top input:focus {
+  border: 2px solid grey;
 }
 
 .wrapper .top p {
@@ -54,5 +63,15 @@ body {
 .wrapper ul li button {
   margin: 0 0 10px 50px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 376px) {
+  .wrapper {
+    width: 350px;
+    padding: 10px 0 10px 10px;
+  }
+  .wrapper input {
+    width: 100px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
