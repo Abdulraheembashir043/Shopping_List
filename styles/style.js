@@ -1,32 +1,27 @@
 const btn = document.querySelector('#add');
 const input = document.querySelector('#item');
 const lists = document.querySelector('#items');
-const msg1 = document.querySelector('#message1');
-const msg2 = document.querySelector('#message2');
-const msg3 = document.querySelector('#message3');
+const output = document.querySelector('.top');
+  let msg = document.createElement('p');
+  output.appendChild(msg);
 
 input.value = '';
+input.focus();
 
 btn.addEventListener('click', () => {
+  input.focus();
 
   if(input.value === '') {
-    msg1.style.display = 'block';
-    msg2.style.display = 'none';
-    msg3.style.display = 'none';
-    input.focus();
+    msg.textContent = 'An item is needed';
   }else if(!isNaN(input.value)) {
-    msg1.style.display = 'none';
-    msg2.style.display = 'block';
-    msg3.style.display = 'none';
-    input.focus();
+    msg.textContent = 'Number can\'t be an item';
   }else if(lists.childElementCount === 5) {
+    input.blur();
     btn.disabled = true;
     btn.style.cursor = 'not-allowed';
-    msg1.style.display = 'none';
-    msg2.style.display = 'none';
-    msg3.style.display = 'block';
-    input.focus();
+    msg.textContent = 'You can only add 5 items';
   }else {
+    msg.textContent = '';
     let list = document.createElement('li');
     list.textContent = input.value;
     lists.appendChild(list);
@@ -35,25 +30,16 @@ btn.addEventListener('click', () => {
     list.appendChild(button);
 
     input.value = '';
-    msg1.style.display = 'none';
-    msg2.style.display = 'none';
-    msg3.style.display = 'none';
 
     button.addEventListener('click', () => {
+      input.focus();
       list.remove();
       btn.style.cursor = 'pointer';
-      msg1.style.display = 'none';
-      msg2.style.display = 'none';
-      msg3.style.display = 'none';
+      msg.textContent = '';
 
       if(lists.childElementCount < 5) {
         btn.disabled = false;
       }
-      input.focus();
     });
-    input.focus();
   }
 })
-input.focus();
-
-
